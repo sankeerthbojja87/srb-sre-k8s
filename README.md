@@ -133,7 +133,7 @@ Key learning: `cordon` prevents new pods from scheduling on the node. `drain` ev
 Create a Horizontal Pod Autoscaler:
 
 ```bash
-kubectl autoscale deployment web --cpu=60% --min=3 --max=6 -n srb-sre-lab
+kubectl apply -f web-hpa.yaml
 kubectl get hpa -n srb-sre-lab
 ```
 
@@ -205,4 +205,3 @@ This lab demonstrates:
 - HPA object creation and metrics-server dependency
 - Ingress routing through NGINX Ingress Controller
 - Helm chart rendering, linting, install, upgrade, and rollback
-
