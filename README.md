@@ -1,16 +1,16 @@
-# SRB SRE Kubernetes Practice Lab
+# Kubernetes Operations Lab
 
-Hands-on Kubernetes, Helm, and SRE operations practice for a local Mac environment.
+Hands-on Kubernetes, Helm, and operations lab for a local Mac environment.
 
-This repo captures a practical interview-prep lab built with:
+This repo contains a local Kubernetes lab built with:
 
 - Colima for a local Linux container runtime on macOS
 - Docker as the container runtime
 - kind for a local multi-node Kubernetes cluster
 - kubectl for cluster operations
 - NGINX as a sample application workload
-- NGINX Ingress Controller for local ingress practice
-- Helm for chart/package management practice
+- NGINX Ingress Controller for local ingress
+- Helm for chart/package management
 
 ## Local Cluster Shape
 
@@ -21,7 +21,7 @@ The cluster is created with `kind-multinode.yaml`:
 2 worker nodes
 ```
 
-This lets you practice production-style workflows such as node drains, pod rescheduling, Pod Disruption Budgets, rolling updates, rollback, service routing, and ingress routing.
+This setup supports multi-node workflows such as node drains, pod rescheduling, Pod Disruption Budgets, rolling updates, rollback, service routing, and ingress routing.
 
 ## Build The Cluster
 
@@ -126,7 +126,7 @@ Bring it back:
 kubectl uncordon srb-sre-lab-worker2
 ```
 
-Key learning: `cordon` prevents new pods from scheduling on the node. `drain` evicts existing application pods while respecting the Pod Disruption Budget.
+`cordon` prevents new pods from scheduling on the node. `drain` evicts existing application pods while respecting the Pod Disruption Budget.
 
 ## HPA
 
@@ -189,9 +189,9 @@ Rollback:
 helm rollback web-helm 1 -n srb-sre-lab
 ```
 
-## Interview Talking Point
+## Components Covered
 
-This lab demonstrates:
+This lab includes:
 
 - multi-node Kubernetes cluster setup
 - Deployment, ReplicaSet, Pod relationships
